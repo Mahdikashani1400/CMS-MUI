@@ -1,0 +1,28 @@
+.icon__box {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.icon__box .content {
+  display: flex;
+  gap: 0.5rem;
+}
+.icon__box a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.icon__box svg {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+}
+.icon__box--text p {
+  line-height: 20px;
+  font-size: 14px;
+}

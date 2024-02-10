@@ -1,0 +1,93 @@
+.topbar {
+  background: #191c24;
+  position: fixed;
+
+  width: inherit;
+  top: 0;
+}
+.topbar__wrapper {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 50%;
+}
+.top__left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-basis: 50%;
+}
+.top__search {
+  width: 80%;
+}
+.top__search input {
+  width: 100%;
+  border-radius: 6px;
+  background: #191c24;
+  padding: 13px 20px 11px 20px;
+  border: 1px solid #2c2e33;
+  color: #fff;
+}
+.top__search input::placeholder {
+  color: #6c7293;
+}
+.top__search input:focus-within {
+  border: 1px solid #2c2e33;
+  outline: none;
+}
+.top__right {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: end;
+  gap: 1.7rem;
+}
+.top__icons {
+  display: flex;
+}
+.top__icons .top__icon {
+  position: relative;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.top__icons .top__icon {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.top__icons .top__icon:not(:last-child) {
+  border-right: 1px solid #2c2e33;
+}
+.top__icons .top__badge {
+  position: absolute;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  top: 9px;
+  right: 10px;
+  border-radius: 50%;
+  background-color: red;
+}
+.top__icons .top__badge.email {
+  background-color: green;
+}
+.top__icons .top__badge.notif {
+  right: 15px;
+}
+.MuiSvgIcon-root {
+  cursor: pointer;
+}
+.top__profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.top__profile img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
