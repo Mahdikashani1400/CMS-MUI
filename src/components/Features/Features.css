@@ -1,0 +1,30 @@
+.features__container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.single__feature {
+  background: #191c24;
+  padding: 2.2rem;
+  display: flex;
+  gap: 3.3rem;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px 1px #ffffff33;
+}
+.feature__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+.feature__price {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: inline-block;
+  padding-right: 0.8rem;
+}
+.feature__title {
+  color: #6c7293;
+}

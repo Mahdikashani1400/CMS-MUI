@@ -1,9 +1,9 @@
 .topbar {
   background: #191c24;
-  position: fixed;
+  position: sticky;
 
-  width: inherit;
   top: 0;
+  right: 0;
 }
 .topbar__wrapper {
   display: flex;

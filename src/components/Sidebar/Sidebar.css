@@ -1,9 +1,10 @@
 .sidebar {
+  width: 244px;
+
   background: #191c24;
   box-sizing: border-box;
-  position: fixed;
+  position: sticky;
   top: 0;
-
   left: 0;
 }
 .sidebar__info {

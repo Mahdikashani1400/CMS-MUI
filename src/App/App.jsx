@@ -18,12 +18,10 @@ function App() {
   return (
     <>
       <div className="container">
-        <div className="">
-          <Sidebar />
-        </div>
+        <Sidebar />
         <div className="page__content">
           <Topbar />
-          {router}
+          <div className="router__container">{router}</div>
         </div>
       </div>
       {/* <div className="app__container">

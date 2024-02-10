@@ -32,8 +32,9 @@
 .page__content {
   width: calc(100% - 244px);
 }
-.sidebar {
-  width: 244px;
+
+.router__container {
+  padding: 1.5rem;
 }
 #Icons {
   display: none;
