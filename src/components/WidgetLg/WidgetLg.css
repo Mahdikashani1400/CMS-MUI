@@ -1,0 +1,21 @@
+.widget__lg {
+  width: 66%;
+}
+.widget__lg .status {
+  padding: 0.4rem 0.5rem;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.widget__lg .Approved {
+  color: rgb(96, 173, 96);
+  background-color: rgb(96, 173, 96, 0.2);
+}
+.widget__lg .Declined {
+  color: rgb(215, 74, 74);
+  background-color: rgba(215, 74, 74, 0.2);
+}
+.widget__lg .Pending {
+  color: rgb(90, 91, 173);
+  background-color: rgba(90, 91, 173, 0.2);
+}
+

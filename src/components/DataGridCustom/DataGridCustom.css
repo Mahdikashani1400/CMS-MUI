@@ -1,0 +1,47 @@
+.dataGridCustom .profile {
+  display: flex;
+  align-items: center;
+}
+.dataGridCustom .profile img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.MuiDataGrid-root {
+  border-radius: 10px !important;
+  box-shadow: 1px 2px 5px #92888873;
+}
+.MuiDataGrid-columnHeader {
+  padding: 0 !important;
+}
+
+.css-yrdy0g-MuiDataGrid-columnHeaderRow {
+  width: 100%;
+  justify-content: space-around;
+}
+.MuiDataGrid-virtualScrollerRenderZone,
+.MuiDataGrid-columnHeadersInner {
+  min-width: fit-content;
+  width: 100%;
+}
+.MuiDataGrid-row {
+  width: 100% !important;
+  /* border-bottom: 1px solid rgba(81, 81, 81, 1); */
+  justify-content: space-around;
+}
+.MuiDataGrid-cellContent {
+  /* padding-left: 7px; */
+}
+.MuiDataGrid-columnHeaderTitleContainer,
+.MuiDataGrid-cell {
+  display: flex;
+  justify-content: center !important;
+  /* width: 100%; */
+  border: none !important;
+  align-items: center;
+  padding: 0 !important;
+}
+.MuiDataGrid-cell:last-child:not(.MuiDataGrid-cell--textLeft) {
+  display: none !important;
+}

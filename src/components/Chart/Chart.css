@@ -1,7 +1,8 @@
 .chart {
   margin-top: 4.5rem;
-  padding: 0.2rem;
-  box-shadow: 1px 2px 4px 1px #ffffff33;
+  padding: 1rem;
+  padding-bottom: 0;
+  box-shadow: 1px 2px 5px #92888873;
 }
 .recharts-responsive-container {
   height: 600px !important;

@@ -1,0 +1,21 @@
+.widget__container {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  padding: 3.5rem 0;
+}
+.widget__container h3 {
+  padding-bottom: 1rem;
+}
+@media screen and (max-width: 976px) {
+  .widget__lg {
+    width: 100%;
+  }
+  .widget__sm {
+    width: 100%;
+  }
+  .widget__container {
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+}

@@ -1,0 +1,16 @@
+.user__list .status {
+  padding: 0.4rem 0.5rem;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.user__list .active {
+  color: rgb(96, 173, 96);
+  background-color: rgb(96, 173, 96, 0.2);
+}
+.user__list .non-active {
+  color: rgb(215, 74, 74);
+  background-color: rgba(215, 74, 74, 0.2);
+}
+.user__list svg {
+  font-size: 20px;
+}

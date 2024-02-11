@@ -5,12 +5,12 @@
 }
 .single__feature {
   background: #191c24;
-  padding: 2.2rem;
+  padding: 2.2rem 1.5rem;
   display: flex;
   gap: 3.3rem;
   align-items: center;
   border-radius: 5px;
-  box-shadow: 1px 2px 4px 1px #ffffff33;
+  box-shadow: 1px 2px 5px #92888873;
 }
 .feature__info {
   display: flex;
