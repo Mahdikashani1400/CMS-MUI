@@ -1,3 +1,6 @@
+.data__grid-title {
+  padding-bottom: 1rem;
+}
 .dataGridCustom .profile {
   display: flex;
   align-items: center;
@@ -7,7 +10,14 @@
   width: 35px;
   height: 35px;
 }
-
+.dataGridCustom .edit {
+  color: #fff;
+  background-color: rgba(21, 121, 36, 0.947);
+  padding: 0.3rem 0.6rem;
+  border-radius: 7px;
+  font-size: 12px;
+  cursor: pointer;
+}
 .MuiDataGrid-root {
   border-radius: 10px !important;
   box-shadow: 1px 2px 5px #92888873;

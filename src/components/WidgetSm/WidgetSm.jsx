@@ -5,7 +5,7 @@ import { newMembersData } from "../../datas";
 export default function WidgetSm() {
   return (
     <div className="widget__sm">
-      <h3>Joined New Members</h3>
+      <h3 className="data__grid-title">Joined New Members</h3>
       <DataGridCustom
         rows={newMembersData.rows}
         columns={newMembersData.columns}

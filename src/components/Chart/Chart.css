@@ -5,7 +5,7 @@
   box-shadow: 1px 2px 5px #92888873;
 }
 .recharts-responsive-container {
-  height: 600px !important;
+  /* height: 600px !important; */
   margin-top: 0.8rem;
 }
 .recharts-tooltip-wrapper {

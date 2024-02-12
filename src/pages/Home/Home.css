@@ -4,9 +4,7 @@
   width: 100%;
   padding: 3.5rem 0;
 }
-.widget__container h3 {
-  padding-bottom: 1rem;
-}
+
 @media screen and (max-width: 976px) {
   .widget__lg {
     width: 100%;

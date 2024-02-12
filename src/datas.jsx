@@ -1,7 +1,9 @@
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-const chartData = [
+import { Link } from "react-router-dom";
+
+const chartDataSales = [
   { month: "January", sale: 2000 },
   { month: "February", sale: 5000 },
   { month: "March", sale: 8000 },
@@ -364,7 +366,7 @@ const userListData = {
         <>
           <div className="" style={{ display: "flex", gap: "20px" }}>
             <DeleteIcon color="error" />
-            <EditIcon color="primary" />
+            <div className="edit">Edit</div>
           </div>
         </>
       ),
@@ -473,4 +475,141 @@ const userListData = {
     },
   ],
 };
-export { chartData, newMembersData, lastestTransActionsData, userListData };
+const productsData = {
+  columns: [
+    {
+      field: "id",
+      headerName: "ID", //width: 90
+    },
+    {
+      field: "photo",
+      headerName: "Photo",
+      // width: 130,
+      renderCell: (params) => {
+        return (
+          <>
+            <div className="profile">
+              <img src={`/img/${params.row.photo}`} alt="" />
+            </div>
+          </>
+        );
+      },
+    },
+
+    {
+      field: "name",
+      headerName: "Name",
+
+      width: 160,
+    },
+
+    {
+      field: "price",
+      headerName: "Price",
+      //   width: 170,
+    },
+    {
+      field: "action",
+      headerName: "Action",
+      renderCell: (params) => (
+        <>
+          <div className="" style={{ display: "flex", gap: "20px" }}>
+            <DeleteIcon color="error" />
+            <Link to={`/product/${params.id}`} className="edit">
+              Edit
+            </Link>
+          </div>
+        </>
+      ),
+    },
+  ],
+
+  rows: [
+    {
+      id: 1,
+
+      photo: "profile.jpg",
+
+      name: "Asus",
+      price: "$487",
+    },
+    {
+      id: 2,
+
+      photo: "profile.jpg",
+
+      name: "Asus",
+      price: "$487",
+    },
+    {
+      id: 3,
+
+      photo: "profile.jpg",
+
+      name: "Asus",
+      price: "$487",
+    },
+    {
+      id: 4,
+
+      photo: "profile.jpg",
+
+      name: "Asus",
+      price: "$487",
+    },
+    {
+      id: 5,
+
+      photo: "profile.jpg",
+
+      name: "Asus",
+      price: "$487",
+    },
+    {
+      id: 6,
+
+      photo: "profile.jpg",
+
+      name: "Asus",
+      price: "$487",
+    },
+    {
+      id: 7,
+
+      photo: "profile.jpg",
+
+      name: "Asus",
+      price: "$487",
+    },
+    {
+      id: 8,
+
+      photo: "profile.jpg",
+
+      name: "Asus",
+      price: "$487",
+    },
+    {
+      id: 9,
+
+      photo: "profile.jpg",
+
+      name: "Asus",
+      price: "$487",
+    },
+  ],
+};
+
+const productDataSales = [
+  { month: "January", sale: 150 },
+  { month: "February", sale: 387 },
+  { month: "March", sale: 294 },
+];
+export {
+  chartDataSales,
+  newMembersData,
+  lastestTransActionsData,
+  userListData,
+  productsData,
+  productDataSales,
+};
