@@ -1,7 +1,7 @@
 .topbar {
   background: #191c24;
   position: sticky;
-
+  z-index: 111111;
   top: 0;
   right: 0;
 }

@@ -28,6 +28,10 @@
 
 .container {
   display: flex;
+  position: fixed;
+  width: 100%;
+  height: -webkit-fill-available;
+  overflow-y: scroll;
 }
 .page__content {
   width: calc(100% - 244px);

@@ -82,7 +82,7 @@
 .form__info-product select {
   width: 300px;
   /* box-sizing: border-box; */
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem;
 }
 .form__info-product label {
   padding-bottom: 0.5rem;

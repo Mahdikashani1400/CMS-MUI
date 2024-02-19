@@ -14,3 +14,24 @@
 .user__list svg {
   font-size: 20px;
 }
+.css-vagkyp *:not(button) {
+  color: #fff !important;
+}
+.css-vagkyp input {
+  border: 1px solid #fff;
+  box-shadow: 1px 0px 4px #ffffff8c;
+  border-radius: 7px;
+}
+.css-vagkyp input:hover {
+  /* border: ; */
+}
+.css-vagkyp {
+  width: 430px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem !important;
+  border-radius: 8px;
+  background-color: #191c24 !important;
+  color: #fff !important;
+}

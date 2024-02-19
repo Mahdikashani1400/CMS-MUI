@@ -1,7 +1,8 @@
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
+
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import UserList from "./pages/UserList/UserList";
 
 const chartDataSales = [
   { month: "January", sale: 2000 },
@@ -303,22 +304,21 @@ const lastestTransActionsData = {
     },
   ],
 };
-
-const userListData = {
+let userListData = {
   columns: [
     {
       field: "id",
       headerName: "ID", //width: 90
     },
     {
-      field: "profile",
+      field: "avatar",
       headerName: "Profile",
       // width: 130,
       renderCell: (params) => {
         return (
           <>
             <div className="profile">
-              <img src={`/img/${params.row.profile}`} alt="" />
+              <img src={`/img/${params.row.avatar}`} alt="" />
             </div>
           </>
         );
@@ -326,13 +326,13 @@ const userListData = {
     },
 
     {
-      field: "fullName",
+      field: "name",
       headerName: "Full name",
       description: "This column has a value getter and is not sortable.",
       sortable: false,
       width: 160,
-      valueGetter: (params) =>
-        `${params.row.firstName || ""} ${params.row.lastName || ""}`,
+      // valueGetter: (params) =>
+      //   `${params.row.firstName || ""} ${params.row.lastName || ""}`,
     },
     {
       field: "email",
@@ -355,125 +355,142 @@ const userListData = {
       },
     },
     {
-      field: "transActions",
-      headerName: "TransActions",
-      //   width: 170,
+      field: "transaction",
+      headerName: "TransAction",
+      renderCell: (params) => {
+        return (
+          <>
+            <div>{params.row.transaction} $</div>
+          </>
+        );
+      },
     },
     {
       field: "action",
       headerName: "Action",
-      renderCell: (params) => (
-        <>
-          <div className="" style={{ display: "flex", gap: "20px" }}>
-            <DeleteIcon color="error" />
-            <div className="edit">Edit</div>
-          </div>
-        </>
-      ),
     },
   ],
 
-  rows: [
-    {
-      id: 1,
-      lastName: "Snow",
-      firstName: "Jon",
-      email: "ali@gmail.com",
+  // rows: [
+  //   {
+  //     id: 1,
+  //     lastName: "Snow",
+  //     firstName: "Jon",
+  //     email: "ali@gmail.com",
 
-      profile: "profile.jpg",
+  //     profile: "profile.jpg",
 
-      status: "active",
-      transActions: "$223",
-    },
-    {
-      id: 2,
-      lastName: "Lannister",
-      firstName: "Cersei",
-      email: "ali@gmail.com",
+  //     status: "active",
+  //     transActions: "$223",
+  //   },
+  //   {
+  //     id: 2,
+  //     lastName: "Lannister",
+  //     firstName: "Cersei",
+  //     email: "ali@gmail.com",
 
-      profile: "profile.jpg",
+  //     profile: "profile.jpg",
 
-      status: "non-active",
-      transActions: "$223",
-    },
-    {
-      id: 3,
-      lastName: "Lannister",
-      firstName: "Jaime",
-      email: "ali@gmail.com",
+  //     status: "non-active",
+  //     transActions: "$223",
+  //   },
+  //   {
+  //     id: 3,
+  //     lastName: "Lannister",
+  //     firstName: "Jaime",
+  //     email: "ali@gmail.com",
 
-      profile: "profile.jpg",
+  //     profile: "profile.jpg",
 
-      status: "active",
-      transActions: "$223",
-    },
-    {
-      id: 4,
-      lastName: "Stark",
-      firstName: "Arya",
-      email: "ali@gmail.com",
+  //     status: "active",
+  //     transActions: "$223",
+  //   },
+  //   {
+  //     id: 4,
+  //     lastName: "Stark",
+  //     firstName: "Arya",
+  //     email: "ali@gmail.com",
 
-      profile: "profile.jpg",
+  //     profile: "profile.jpg",
 
-      status: "non-active",
-      transActions: "$223",
-    },
-    {
-      id: 5,
-      lastName: "Targaryen",
-      firstName: "Daenerys",
-      email: "ali@gmail.com",
+  //     status: "non-active",
+  //     transActions: "$223",
+  //   },
+  //   {
+  //     id: 5,
+  //     lastName: "Targaryen",
+  //     firstName: "Daenerys",
+  //     email: "ali@gmail.com",
 
-      profile: "profile.jpg",
+  //     profile: "profile.jpg",
 
-      status: "active",
-      transActions: "$223",
-    },
-    {
-      id: 6,
-      lastName: "Melisandre",
-      firstName: null,
-      email: "ali@gmail.com",
+  //     status: "active",
+  //     transActions: "$223",
+  //   },
+  //   {
+  //     id: 6,
+  //     lastName: "Melisandre",
+  //     firstName: null,
+  //     email: "ali@gmail.com",
 
-      profile: "profile.jpg",
+  //     profile: "profile.jpg",
 
-      status: "active",
-      transActions: "$223",
-    },
-    {
-      id: 7,
-      lastName: "Clifford",
-      firstName: "Ferrara",
-      email: "ali@gmail.com",
+  //     status: "active",
+  //     transActions: "$223",
+  //   },
+  //   {
+  //     id: 7,
+  //     lastName: "Clifford",
+  //     firstName: "Ferrara",
+  //     email: "ali@gmail.com",
 
-      profile: "profile.jpg",
+  //     profile: "profile.jpg",
 
-      status: "active",
-      transActions: "$223",
-    },
-    {
-      id: 8,
-      lastName: "Frances",
-      firstName: "Rossini",
-      email: "ali@gmail.com",
+  //     status: "active",
+  //     transActions: "$223",
+  //   },
+  //   {
+  //     id: 8,
+  //     lastName: "Frances",
+  //     firstName: "Rossini",
+  //     email: "ali@gmail.com",
 
-      profile: "profile.jpg",
+  //     profile: "profile.jpg",
 
-      status: "active",
-      transActions: "$223",
-    },
-    {
-      id: 9,
-      lastName: "Roxie",
-      firstName: "Harvey",
-      email: "ali@gmail.com",
+  //     status: "active",
+  //     transActions: "$223",
+  //   },
+  //   {
+  //     id: 9,
+  //     lastName: "Roxie",
+  //     firstName: "Harvey",
+  //     email: "ali@gmail.com",
 
-      profile: "profile.jpg",
+  //     profile: "profile.jpg",
 
-      status: "active",
-      transActions: "$223",
-    },
-  ],
+  //     status: "active",
+  //     transActions: "$223",
+  //   },
+  // ],
+  // rows: async function () {
+  //   let userDatas = null;
+  //   useEffect(() => {
+  //     fetch("https://65c5df77e5b94dfca2e0744a.mockapi.io/api/v1/users", {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     })
+  //       .then(async (res) => {
+  //         return await res.json();
+  //       })
+  //       .then((data) => {
+  //         console.log(data);
+  //         userDatas = data;
+  //       });
+  //   }, []);
+  //   return userDatas;
+  // },
 };
 const productsData = {
   columns: [
