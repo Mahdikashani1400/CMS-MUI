@@ -2,8 +2,8 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import UserList from "./pages/UserList/UserList";
-
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 const chartDataSales = [
   { month: "January", sale: 2000 },
   { month: "February", sale: 5000 },
@@ -370,127 +370,6 @@ let userListData = {
       headerName: "Action",
     },
   ],
-
-  // rows: [
-  //   {
-  //     id: 1,
-  //     lastName: "Snow",
-  //     firstName: "Jon",
-  //     email: "ali@gmail.com",
-
-  //     profile: "profile.jpg",
-
-  //     status: "active",
-  //     transActions: "$223",
-  //   },
-  //   {
-  //     id: 2,
-  //     lastName: "Lannister",
-  //     firstName: "Cersei",
-  //     email: "ali@gmail.com",
-
-  //     profile: "profile.jpg",
-
-  //     status: "non-active",
-  //     transActions: "$223",
-  //   },
-  //   {
-  //     id: 3,
-  //     lastName: "Lannister",
-  //     firstName: "Jaime",
-  //     email: "ali@gmail.com",
-
-  //     profile: "profile.jpg",
-
-  //     status: "active",
-  //     transActions: "$223",
-  //   },
-  //   {
-  //     id: 4,
-  //     lastName: "Stark",
-  //     firstName: "Arya",
-  //     email: "ali@gmail.com",
-
-  //     profile: "profile.jpg",
-
-  //     status: "non-active",
-  //     transActions: "$223",
-  //   },
-  //   {
-  //     id: 5,
-  //     lastName: "Targaryen",
-  //     firstName: "Daenerys",
-  //     email: "ali@gmail.com",
-
-  //     profile: "profile.jpg",
-
-  //     status: "active",
-  //     transActions: "$223",
-  //   },
-  //   {
-  //     id: 6,
-  //     lastName: "Melisandre",
-  //     firstName: null,
-  //     email: "ali@gmail.com",
-
-  //     profile: "profile.jpg",
-
-  //     status: "active",
-  //     transActions: "$223",
-  //   },
-  //   {
-  //     id: 7,
-  //     lastName: "Clifford",
-  //     firstName: "Ferrara",
-  //     email: "ali@gmail.com",
-
-  //     profile: "profile.jpg",
-
-  //     status: "active",
-  //     transActions: "$223",
-  //   },
-  //   {
-  //     id: 8,
-  //     lastName: "Frances",
-  //     firstName: "Rossini",
-  //     email: "ali@gmail.com",
-
-  //     profile: "profile.jpg",
-
-  //     status: "active",
-  //     transActions: "$223",
-  //   },
-  //   {
-  //     id: 9,
-  //     lastName: "Roxie",
-  //     firstName: "Harvey",
-  //     email: "ali@gmail.com",
-
-  //     profile: "profile.jpg",
-
-  //     status: "active",
-  //     transActions: "$223",
-  //   },
-  // ],
-  // rows: async function () {
-  //   let userDatas = null;
-  //   useEffect(() => {
-  //     fetch("https://65c5df77e5b94dfca2e0744a.mockapi.io/api/v1/users", {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     })
-  //       .then(async (res) => {
-  //         return await res.json();
-  //       })
-  //       .then((data) => {
-  //         console.log(data);
-  //         userDatas = data;
-  //       });
-  //   }, []);
-  //   return userDatas;
-  // },
 };
 const productsData = {
   columns: [

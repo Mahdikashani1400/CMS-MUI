@@ -3,7 +3,7 @@ import Chart from "../../components/Chart/Chart";
 
 import NewThing from "../NewThing/NewThing";
 
-export default function ThingEdit({ productDataSales }) {
+export default function ThingEdit({ productDataSales, productTarget }) {
   return (
     <>
       {" "}
@@ -25,11 +25,11 @@ export default function ThingEdit({ productDataSales }) {
           <div className="product__box-info">
             <div className="">
               <span>ID:</span>
-              <span>121</span>
+              <span>{productTarget.id}</span>
             </div>
             <div className="">
               <span>Name:</span>
-              <span>Dell LapTop</span>
+              <span>{productTarget.name}</span>
             </div>
             <div className="">
               <span>Sales:</span>
@@ -45,7 +45,7 @@ export default function ThingEdit({ productDataSales }) {
             </div>
           </div>
         </div>
-        <NewThing />
+        <NewThing productTarget={productTarget} />
       </div>
     </>
   );

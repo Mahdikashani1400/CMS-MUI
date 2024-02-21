@@ -31,13 +31,6 @@ const style = {
 
 export default function UserList() {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => {
-    setInputValueName("");
-    setInputValueEmail("");
-    setInputValueTransAction("");
-    setOpen(false);
-  };
 
   const [userDatas, setUserDatas] = useState({
     rows: [],
@@ -78,6 +71,17 @@ export default function UserList() {
       </>
     );
   };
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => {
+    setInputValueName("");
+    setInputValueEmail("");
+    setInputValueTransAction("");
+    setUserId("");
+    setCurrentUserInfo({});
+    setOpen(false);
+  };
+
   useEffect(() => {
     // console.log(userListData);
 
@@ -86,10 +90,10 @@ export default function UserList() {
   useEffect(() => {
     if (userId.split("-")[0] === "delete") {
       setUserDatas((prevState) => {
-        let userDataRemoved = prevState.rows.filter((data) => {
+        let newUsersData = prevState.rows.filter((data) => {
           return data.id !== userId.split("-")[1];
         });
-        return { rows: userDataRemoved, columns: prevState.columns };
+        return { rows: newUsersData, columns: prevState.columns };
       });
     } else if (userId.split("-")[0] === "edit") {
       setCurrentUserInfo(
@@ -143,8 +147,7 @@ export default function UserList() {
         <Modal
           open={open}
           onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
+    
         >
           <Box sx={style}>
             <form noValidate autoComplete="off" className="form__info-product">

@@ -6,7 +6,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import styled from "@emotion/styled";
 
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-export default function NewThing() {
+import { useState } from "react";
+export default function NewThing({ productTarget }) {
   const darkTheme = createTheme({
     palette: {
       mode: "dark",
@@ -23,6 +24,10 @@ export default function NewThing() {
     whiteSpace: "nowrap",
     width: 1,
   });
+  const [nameValue, setNameValue] = useState(productTarget.name);
+  const [priceValue, setPriceValue] = useState(
+    productTarget.price.split("$")[1]
+  );
   return (
     <div className="product__box big">
       <div className="">
@@ -43,7 +48,10 @@ export default function NewThing() {
                     placeholder="Placeholder"
                     // helperText="Full width!"
                     // fullWidth
-                    // value={"Asus"}
+                    value={nameValue}
+                    onChange={(e) => {
+                      setNameValue(e.nativeEvent.target.value);
+                    }}
                     margin="normal"
                     InputLabelProps={{
                       shrink: true,
@@ -62,7 +70,10 @@ export default function NewThing() {
                     placeholder="Placeholder"
                     // helperText="Full width!"
                     // fullWidth
-                    // value={"Asus"}
+                    value={priceValue}
+                    onChange={(e) => {
+                      setPriceValue(e.nativeEvent.target.value);
+                    }}
                     margin="normal"
                     InputLabelProps={{
                       shrink: true,
