@@ -1,5 +1,4 @@
 const getDataFromDatabase = (kind, setState, columns) => {
-  console.log("gg");
   fetch(`https://65c5df77e5b94dfca2e0744a.mockapi.io/api/v1/${kind}`, {
     method: "GET",
     headers: {

@@ -15,6 +15,7 @@ import {
   editDataFromDatabase,
 } from "../../shared";
 import { InputLabel, TextField } from "@mui/material";
+import UseModal from "../../hooks/UseModal";
 
 const style = {
   position: "absolute",
@@ -30,18 +31,24 @@ const style = {
 };
 
 export default function UserList() {
-  const [open, setOpen] = useState(false);
-
   const [userDatas, setUserDatas] = useState({
     rows: [],
     columns: userListData.columns,
   });
-  const [userId, setUserId] = useState("");
+
   const [currentUserInfo, setCurrentUserInfo] = useState({});
   let [inputValueName, setInputValueName] = useState("");
   let [inputValueEmail, setInputValueEmail] = useState("");
   let [inputValueTransAction, setInputValueTransAction] = useState("");
+  const [userId, setUserId] = useState("");
 
+  const [open, handleOpen, handleClose] = UseModal(
+    setCurrentUserInfo,
+    setInputValueName,
+    setInputValueEmail,
+    setInputValueTransAction,
+    setUserId
+  );
   userListData.columns[6]["renderCell"] = (params) => {
     return (
       <>
@@ -70,16 +77,6 @@ export default function UserList() {
         </div>
       </>
     );
-  };
-
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => {
-    setInputValueName("");
-    setInputValueEmail("");
-    setInputValueTransAction("");
-    setUserId("");
-    setCurrentUserInfo({});
-    setOpen(false);
   };
 
   useEffect(() => {
@@ -128,9 +125,7 @@ export default function UserList() {
     setUserDatas((prevState) => {
       let newUserDatas = prevState.rows.map((data) => {
         if (data.id === userId.split("-")[1]) {
-          data["name"] = inputValueName;
-          data["email"] = inputValueEmail;
-          data["transaction"] = inputValueTransAction;
+          data = { ...data, ...editedData };
         }
         return data;
       });
@@ -144,11 +139,7 @@ export default function UserList() {
       {/* <BasicModal /> */}
       <div>
         {/* <Button onClick={handleOpen}>Open modal</Button> */}
-        <Modal
-          open={open}
-          onClose={handleClose}
-    
-        >
+        <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
             <form noValidate autoComplete="off" className="form__info-product">
               <div>

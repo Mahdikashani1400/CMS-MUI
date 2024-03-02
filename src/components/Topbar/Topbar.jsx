@@ -4,12 +4,18 @@ import WidgetsIcon from "@mui/icons-material/Widgets";
 import EmailIcon from "@mui/icons-material/Email";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Badge } from "@mui/material";
-export default function Topbar() {
+export default function Topbar({ openMenuHandler }) {
   return (
     <div className="topbar">
       <div className="topbar__wrapper">
         <div className="top__left">
-          <MenuIcon style={{ color: "#6c7293", width: "20px" }} />
+          <MenuIcon
+            style={{ color: "#6c7293", width: "20px" }}
+            onClick={() => {
+              console.log("dqw");
+              openMenuHandler();
+            }}
+          />
           <div className="top__search">
             <input type="text" placeholder="Search products" />
           </div>

@@ -7,6 +7,7 @@ import { chartDataSales } from "../../datas";
 
 import "./Home.css";
 export default function Home() {
+  console.log("Home");
   // useEffect(() => {
   //   fetch("https://65c5df77e5b94dfca2e0744a.mockapi.io/api/v1/users", {
   //     method: "GET",

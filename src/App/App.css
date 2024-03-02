@@ -33,7 +33,7 @@
   height: -webkit-fill-available;
   overflow-y: scroll;
 }
-.page__content {
+.page__content.open__menu {
   width: calc(100% - 244px);
 }
 

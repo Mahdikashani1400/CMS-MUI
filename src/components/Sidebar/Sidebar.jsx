@@ -7,6 +7,7 @@ import StorefrontIcon from "@mui/icons-material/Storefront";
 import MailIcon from "@mui/icons-material/Mail";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import { NavLink } from "react-router-dom";
+import { useRef, useState } from "react";
 
 export default function Sidebar() {
   return (
