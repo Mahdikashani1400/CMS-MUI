@@ -42,4 +42,25 @@ const editDataFromDatabase = async (id, kind, editedData) => {
       console.log(task);
     });
 };
-export { getDataFromDatabase, deleteDataFromDatabase, editDataFromDatabase };
+
+const addData = async (kind, dataInfo) => {
+  await fetch(`https://65c5df77e5b94dfca2e0744a.mockapi.io/api/v1/${kind}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(dataInfo),
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((task) => {
+      console.log(task);
+    });
+};
+export {
+  getDataFromDatabase,
+  deleteDataFromDatabase,
+  editDataFromDatabase,
+  addData,
+};

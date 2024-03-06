@@ -6,7 +6,6 @@ import NewThing from "../NewThing/NewThing";
 export default function ThingEdit({ productDataSales, productTarget }) {
   return (
     <>
-      {" "}
       <div className="product__boxes">
         <div className="product__box">
           <h6 className="chart__title">Sale In Month</h6>

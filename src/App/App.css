@@ -29,9 +29,13 @@
 .container {
   display: flex;
   position: fixed;
+  overflow-x: hidden;
   width: 100%;
   height: -webkit-fill-available;
   overflow-y: scroll;
+}
+.page__content {
+  width: 100%;
 }
 .page__content.open__menu {
   width: calc(100% - 244px);
